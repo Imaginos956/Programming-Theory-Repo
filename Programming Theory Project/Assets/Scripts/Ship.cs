@@ -2,11 +2,11 @@ using UnityEngine;
 
 public class Ship : MonoBehaviour
 {
-    protected int m_speed;
+    protected float m_speed;
     protected int m_life;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
 
-    public int speed
+    public float speed
     {  get { return m_speed; } set { m_speed = value; } }
 
     public int life
@@ -18,9 +18,9 @@ public class Ship : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    public virtual void Update()
     {
-        
+        Move();
     }
 
     public virtual void Move()
