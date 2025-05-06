@@ -4,6 +4,7 @@ public class Ship : MonoBehaviour
 {
     protected float m_speed;
     protected int m_life;
+    public GameObject projectile;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
 
     public float speed
@@ -20,7 +21,7 @@ public class Ship : MonoBehaviour
     // Update is called once per frame
     public virtual void Update()
     {
-        Move();
+        Move();        
     }
 
     public virtual void Move()
@@ -33,8 +34,16 @@ public class Ship : MonoBehaviour
     
     }
 
-    public virtual void Death()
+    public virtual void Death(GameObject proj)
     {
 
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Projectile"))
+        {
+            Death(other.gameObject);
+        }
     }
 }

@@ -16,6 +16,11 @@ public class Enemy : Ship
         startPosition = transform.position;
     }
 
+    public override void Update()
+    {
+        base.Update();
+    }
+
     // Update is called once per frame
     public override void Move()
     {
@@ -41,5 +46,22 @@ public class Enemy : Ship
             }
         }
 
+    }
+
+    public override void Death(GameObject proj)
+    {
+        if (proj.GetComponent<Projectile>().ami && gameObject.CompareTag("Enemy"))
+        {
+            MainManager.Instance.score += 10;
+            Destroy(gameObject);
+            Destroy(proj);
+        }        
+    }
+
+    public override void Fire()
+    {
+        GameObject proj = Instantiate(projectile, transform.position, Quaternion.identity);
+        proj.transform.Rotate(0, 0, 180);
+        proj.GetComponent<Projectile>().ami = false;
     }
 }

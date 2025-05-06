@@ -35,11 +35,8 @@ public class MainManager : MonoBehaviour
     public void SaveDataPlayer()
     {
         SaveData data = new SaveData();
-        if (score > bestScore)
-        {
-            data.bestScore = score;
-            data.namePlayer = nameLastPlayer;
-        }
+        data.bestScore = score > bestScore ? score : bestScore;
+        data.namePlayer = score > bestScore ? nameLastPlayer : namePlayer;
         data.nameLastPlayer = nameLastPlayer;
 
         string json = JsonUtility.ToJson(data);

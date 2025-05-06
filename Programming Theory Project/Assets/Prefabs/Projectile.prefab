@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 4410859759099116340}
   - component: {fileID: 1235886029009742297}
   - component: {fileID: 1507938240035749669}
-  - component: {fileID: 2374171716104275454}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: Untagged
@@ -87,27 +86,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &2374171716104275454
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 102146952284938278}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &4661414967656420543
 GameObject:
   m_ObjectHideFlags: 0
@@ -120,9 +98,10 @@ GameObject:
   - component: {fileID: 1953239751660822148}
   - component: {fileID: 1517833927138725309}
   - component: {fileID: -8724530545315483758}
+  - component: {fileID: -6323562013698059574}
   m_Layer: 0
   m_Name: Projectile
-  m_TagString: Untagged
+  m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -157,6 +136,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
+  ami: 0
 --- !u!54 &1517833927138725309
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -205,6 +185,18 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.0225116, y: 2.519517, z: 1}
   m_Center: {x: -0.0112557225, y: 0.24199724, z: 0}
+--- !u!114 &-6323562013698059574
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4661414967656420543}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b42236c16c9a50d4b95f040b1e6898fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8543421402698099368
 GameObject:
   m_ObjectHideFlags: 0
@@ -216,7 +208,6 @@ GameObject:
   - component: {fileID: 2604046187980128554}
   - component: {fileID: 8720200701423655604}
   - component: {fileID: 2672205862893096394}
-  - component: {fileID: 5920362426957448969}
   m_Layer: 0
   m_Name: Cylinder
   m_TagString: Untagged
@@ -292,26 +283,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &5920362426957448969
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8543421402698099368}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5000001
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
