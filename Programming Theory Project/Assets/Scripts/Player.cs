@@ -1,6 +1,7 @@
 using UnityEditor;
 using UnityEngine;
 
+// INHERITANCE
 public class Player : Ship
 {
     private float MaxMovement = 6;
@@ -10,12 +11,14 @@ public class Player : Ship
         speed = 15;
     }
 
+    // POLYMORPHISM
     public override void Update()
     {
         base.Update();
         Fire();
     }
 
+    // POLYMORPHISM
     public override void Move()
     {
         float input = Input.GetAxis("Horizontal");
@@ -31,6 +34,7 @@ public class Player : Ship
         transform.position = pos;
     }
 
+    // POLYMORPHISM
     public override void Fire()
     {
         if (Input.GetKeyDown(KeyCode.Space))
@@ -40,6 +44,7 @@ public class Player : Ship
         }
     }
 
+    // POLYMORPHISM
     public override void Death(GameObject proj)
     {
         if (!proj.GetComponent<Projectile>().ami && gameObject.CompareTag("Player"))

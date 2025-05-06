@@ -5,11 +5,12 @@ public class Ship : MonoBehaviour
     protected float m_speed;
     protected int m_life;
     public GameObject projectile;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
 
+    // ENCAPSULATION
     public float speed
     {  get { return m_speed; } set { m_speed = value; } }
 
+    // ENCAPSULATION
     public int life
     {  get { return m_life; } set { m_life = value; } }
 

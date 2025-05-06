@@ -1,5 +1,6 @@
 using UnityEngine;
 
+// INHERITANCE
 public class Enemy : Ship
 {
 
@@ -21,7 +22,7 @@ public class Enemy : Ship
         base.Update();
     }
 
-    // Update is called once per frame
+    // POLYMORPHISM
     public override void Move()
     {
 
@@ -48,6 +49,7 @@ public class Enemy : Ship
 
     }
 
+    // POLYMORPHISM
     public override void Death(GameObject proj)
     {
         if (proj.GetComponent<Projectile>().ami && gameObject.CompareTag("Enemy"))
@@ -58,6 +60,7 @@ public class Enemy : Ship
         }        
     }
 
+    // POLYMORPHISM
     public override void Fire()
     {
         GameObject proj = Instantiate(projectile, transform.position, Quaternion.identity);
